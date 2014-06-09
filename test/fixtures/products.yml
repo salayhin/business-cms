@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  priority: 1
+  image: MyString
+  published: false
+
+two:
+  title: MyString
+  description: MyText
+  priority: 1
+  image: MyString
+  published: false

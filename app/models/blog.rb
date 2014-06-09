@@ -3,4 +3,7 @@ class Blog < ActiveRecord::Base
 
   has_many :categorizations
   has_many :categories, :through => :categorizations
+
+  # uploader
+  mount_uploader :image, BlogImageUploader
 end
