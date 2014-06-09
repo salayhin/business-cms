@@ -31,17 +31,13 @@ BusinessCms::Application.routes.draw do
   #   end
 
     resources :products, only: [:index, :show]
-    resources :blogs, only: [:index, :show]
+    resources :blog, only: [:index, :show]
     resources :projects, only: [:index, :show]
     resources :services, only: [:index, :show]
 
-    resources :pages do
-      collection do
-        get 'pages/about'
-        get 'pages/faq'
-        get 'pages/contact'
-      end
-    end
+    get 'about' => 'pages#about'
+    get 'faq'   => 'pages#faq'
+    get 'contact' => 'pages#contact'
 
   # Sample resource route with sub-resources:
   #   resources :products do
