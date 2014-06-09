@@ -4,7 +4,7 @@ ActiveAdmin.register Contact do
     f.inputs do
       f.input :name
       f.input :email
-      f.input :message, input_html: { palceholder: 'Message' }
+      f.input :message,  as: :ckeditor, input_html: { palceholder: 'Message', :ckeditor => {:toolbar => 'Full'} }
       f.actions
     end
   end
