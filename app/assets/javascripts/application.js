@@ -15,4 +15,3 @@
 //= require jquery-1.10.2
 //= require bootstrap
 //= require modern-business
-//= require_tree .
