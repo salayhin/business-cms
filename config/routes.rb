@@ -38,6 +38,7 @@ BusinessCms::Application.routes.draw do
     get 'about' => 'pages#about'
     get 'faq'   => 'pages#faq'
     get 'contact' => 'pages#contact'
+    post 'save_contact' => 'pages#save_contact'
 
   # Sample resource route with sub-resources:
   #   resources :products do

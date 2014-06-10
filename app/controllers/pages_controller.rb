@@ -12,5 +12,16 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @contact = Contact.new
+  end
+
+  def save_contact
+    @contact = Contact.new(params[:contact])
+
+    if @contact.save!
+      redirect_to contact_path, notice: 'Thank you for contact with us.'
+    else
+      render :contact
+    end
   end
 end
