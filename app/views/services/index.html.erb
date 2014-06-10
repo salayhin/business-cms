@@ -41,7 +41,7 @@
     <div class="col-sm-4">
       <%= image_tag(service.image_url(:list), :class => 'img-responsive') %>
       <h3><%= service.title %></h3>
-      <p><%= get_word_summery(service.description, 50).html_safe %></p>
+      <%= get_word_summery(service.description, 50).html_safe %>
       <a class="btn btn-link btn-sm pull-right" href="<%= service_path(service.id) %>">More <i class="fa fa-angle-right"></i></a>
     </div>
     <% end %>

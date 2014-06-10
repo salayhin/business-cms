@@ -3,4 +3,10 @@ class Page < ActiveRecord::Base
 
   # uploader
   mount_uploader :image, PageImageUploader
+
+  PERMALINK = {
+      about: 'about',
+      faq: 'faq',
+      contact: 'contact'
+  }
 end
