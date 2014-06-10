@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def faq
-
+    @faqs = Faq.where(published: true).order('priority')
   end
 
   def contact
