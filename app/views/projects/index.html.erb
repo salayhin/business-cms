@@ -19,7 +19,11 @@
     <% @projects.each do |project| %>
     <div class="col-md-4 portfolio-item">
       <a href="<%= project_path(project.id) %>">
-        <%= image_tag(project.image1_url(:list), :class => 'img-responsive') %>
+        <% if project.image1.present? %>
+            <%= image_tag(project.image1_url(:list), :class => 'img-responsive') %>
+        <% else %>
+            <img class="img-responsive" src="http://placehold.it/700x400">
+        <% end %>
       </a>
       <h3><a href="<%= project_path(project.id) %>"><%= project.title %></a></h3>
       <%= get_word_summery(project.description, 30).html_safe %>

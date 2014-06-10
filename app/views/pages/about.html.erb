@@ -15,7 +15,11 @@
   <div class="row">
 
     <div class="col-md-6">
-      <%= image_tag(@about.image_url(:main), :class => 'img-responsive') %>
+      <% if @about.image.present? %>
+        <%= image_tag(@about.image_url(:main), :class => 'img-responsive') %>
+      <% else %>
+        <img class="img-responsive" src="http://placehold.it/750x450">
+      <% end %>
     </div>
     <div class="col-md-6">
       <%= @about.description.html_safe %>
@@ -33,7 +37,12 @@
 
     <% @teams.each do |team| %>
     <div class="col-sm-4">
-      <%= image_tag(team.image_url(:main), :class => 'img-responsive') %>
+
+      <% if team.image.present? %>
+          <%= image_tag(team.image_url(:main), :class => 'img-responsive') %>
+      <% else %>
+          <img class="img-responsive" src="http://placehold.it/750x450">
+      <% end %>
       <h3><% team.name %>
         <small><%= team.jobtitle %></small>
       </h3>
@@ -64,7 +73,14 @@
     <% @customers.each do |customer| %>
 
     <div class="col-md-2 col-sm-4 col-xs-6">
-      <%= link_to image_tag(customer.image_url(:main), :class => 'img-responsive img-customer'), customer.website, target: '_blank' %>
+
+      <% if customer.image.present? %>
+          <%= link_to image_tag(customer.image_url(:main), :class => 'img-responsive img-customer'), customer.website, target: '_blank' %>
+      <% else %>
+          <a href="<%= customer.website %>">
+            <img class="img-responsive" src="http://placehold.it/500x300">
+          </a>
+      <% end %>
     </div>
     <% end %>
 

@@ -11,5 +11,6 @@
  *= require bootstrap.min
  *= require modern-business
  *= require ../font-awesome/css/font-awesome.min
+ *= require style
  *= require_self
  */

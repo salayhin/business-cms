@@ -39,7 +39,12 @@
 
     <% @services.each do |service| %>
     <div class="col-sm-4">
-      <%= image_tag(service.image_url(:list), :class => 'img-responsive') %>
+
+      <% if service.image.present? %>
+          <%= image_tag(service.image_url(:list), :class => 'img-responsive') %>
+      <% else %>
+            <img class="img-responsive" src="http://placehold.it/750x450">
+      <% end %>
       <h3><%= service.title %></h3>
       <%= get_word_summery(service.description, 50).html_safe %>
       <a class="btn btn-link btn-sm pull-right" href="<%= service_path(service.id) %>">More <i class="fa fa-angle-right"></i></a>

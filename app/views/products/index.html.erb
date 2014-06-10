@@ -19,7 +19,12 @@
     <% @products.each do |product| %>
     <div class="col-md-4 portfolio-item">
       <a href="<%= product_path(product.id) %>">
-        <%= image_tag(product.image_url(:list), :class => 'img-responsive') %>
+
+        <% if product.image.present? %>
+            <%= image_tag(product.image_url(:list), :class => 'img-responsive') %>
+        <% else %>
+              <img class="img-responsive" src="http://placehold.it/700x400">
+        <% end %>
       </a>
       <h3><a href="<%= product_path(product.id) %>"><%= product.title %></a></h3>
       <%= get_word_summery(product.description, 30).html_safe %>

@@ -89,7 +89,14 @@
       </div>
       <% @projects.each do |project| %>
           <div class="col-lg-4 col-md-4 col-sm-6">
-            <%= link_to image_tag(project.image1_url(:list), :class => 'img-responsive img-home-portfolio'), project_path(project.id) %>
+
+            <% if project.image1.present? %>
+                <%= link_to image_tag(project.image1_url(:list), :class => 'img-responsive img-home-portfolio'), project_path(project.id) %>
+            <% else %>
+                <a href="<%= project_path(project.id) %>">
+                  <img class="img-responsive" src="http://placehold.it/700x450">
+                </a>
+            <% end %>
           </div>
       <% end %>
     </div>
@@ -113,11 +120,23 @@
                 <%= product.description.html_safe %>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6">
-                <%= link_to image_tag(product.image_url(:main), :class => 'img-responsive'), product_path(product.id) %>
+                <% if product.image.present? %>
+                    <%= link_to image_tag(product.image_url(:main), :class => 'img-responsive'), product_path(product.id) %>
+                <% else %>
+                    <a href="<%= product_path(product.id) %>">
+                      <img class="img-responsive" src="http://placehold.it/700x450">
+                    </a>
+                <% end %>
               </div>
           <% else %>
               <div class="col-lg-6 col-md-6 col-sm-6">
-                <%= link_to image_tag(product.image_url(:main), :class => 'img-responsive'), product_path(product.id) %>
+                <% if product.image.present? %>
+                    <%= link_to image_tag(product.image_url(:main), :class => 'img-responsive'), product_path(product.id) %>
+                <% else %>
+                    <a href="<%= product_path(product.id) %>">
+                      <img class="img-responsive" src="http://placehold.it/700x450">
+                    </a>
+                <% end %>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6">
                 <h2><%= product.title %></h2>

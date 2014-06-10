@@ -34,7 +34,12 @@
     <% @services.each do |service| %>
     <div class="col-sm-3 col-xs-6">
       <a href="<%= service_path(service.id) %>">
-        <%= image_tag(service.image_url(:list), :class => 'img-responsive img-customer') %>
+        <% if service.image.present? %>
+            <%= image_tag(service.image_url(:list), :class => 'img-responsive img-customer') %>
+        <% else %>
+              <img class="img-responsive" src="http://placehold.it/500x300">
+        <% end %>
+
       </a>
     </div>
     <% end %>

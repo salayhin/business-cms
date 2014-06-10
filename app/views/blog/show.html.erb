@@ -21,7 +21,11 @@
       <p><i class="fa fa-clock-o"></i> Posted on <%= @blog.created_at.strftime("%B %d, %Y") %> by <a href="#">Start Boostrap</a>
       </p>
       <hr>
-      <%= image_tag(@blog.image_url(:main), :class => 'img-responsive') %>
+      <% if @blog.image.present? %>
+          <%= image_tag(@blog.image_url(:main), :class => 'img-responsive') %>
+      <% else %>
+          <img class="img-responsive" src="http://placehold.it/900x300">
+      <% end %>
       <hr>
       <%= @blog.post.html_safe %>
 

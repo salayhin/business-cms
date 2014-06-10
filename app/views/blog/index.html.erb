@@ -21,7 +21,12 @@
     </div>
     <div class="col-md-5">
       <a href="<%= blog_path(blog.id) %>">
-        <%= image_tag(blog.image_url(:main), :class => 'img-responsive') %>
+
+        <% if blog.image.present? %>
+            <%= image_tag(blog.image_url(:main), :class => 'img-responsive') %>
+        <% else %>
+              <img class="img-responsive" src="http://placehold.it/600x300">
+        <% end %>
       </a>
     </div>
     <div class="col-md-6">
