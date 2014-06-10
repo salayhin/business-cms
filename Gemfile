@@ -13,6 +13,7 @@ gem 'client_side_validations', '3.2.6'
 gem 'client_side_validations-formtastic', '~> 2.2.1'
 gem 'mini_magick', '~> 3.5.0'
 gem 'rake', '~> 10.3.2'
+gem 'will_paginate', '~> 3.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
