@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   def index
     @services = Service.where(published: true).order('priority')
+    @services = @services.paginate(page: params[:page], per_page: 6)
   end
 
   def show

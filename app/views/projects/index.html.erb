@@ -26,7 +26,8 @@
         <% end %>
       </a>
       <h3><a href="<%= project_path(project.id) %>"><%= project.title %></a></h3>
-      <%= get_word_summery(project.description, 30).html_safe %>
+      <%= get_word_summery(project.description, 10).html_safe %>
+      <a class="btn btn-link btn-sm" href="<%= project_path(project.id) %>">More <i class="fa fa-angle-right"></i></a>
     </div>
     <% end %>
   </div>
@@ -37,7 +38,7 @@
   <div class="row text-center">
 
     <div class="col-lg-12">
-      <%#= will_paginate @projects, :class => 'pagination' %>
+      <%= will_paginate @projects, :class => 'pagination' %>
     </div>
 
   </div>

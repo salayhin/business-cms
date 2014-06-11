@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.where(published: true).order('priority')
-    #@projects.paginate(page: params[:page], per_page: 12)
+    @products = @products.paginate(page: params[:page], per_page: 6)
   end
 
   def show
