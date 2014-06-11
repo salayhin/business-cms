@@ -28,7 +28,7 @@
   </div>
 
   <!-- Team Member Profiles -->
-
+  <% if @teams.present? %>
   <div class="row">
 
     <div class="col-lg-12">
@@ -61,9 +61,11 @@
     <% end %>
 
   </div>
+  <% end %>
 
   <!-- Our Customers -->
 
+  <% if @customers.present? %>
   <div class="row">
 
     <div class="col-lg-12">
@@ -85,6 +87,6 @@
     <% end %>
 
   </div>
-
+  <% end %>
 </div>
 <!-- /.container -->

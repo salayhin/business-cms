@@ -63,3 +63,13 @@ a:hover, a:focus {
   background-color: #1bbc9a;
   border-color: #dff0d8;
 }
+
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  height: 100%;
+}
