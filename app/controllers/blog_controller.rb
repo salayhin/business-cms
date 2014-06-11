@@ -6,6 +6,7 @@ class BlogController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    @categories = Category.all
   rescue
     redirect_to root_path, notice: 'No record found!'
   end

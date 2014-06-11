@@ -3,6 +3,7 @@ class Blog < ActiveRecord::Base
 
   has_many :categorizations
   has_many :categories, :through => :categorizations
+  belongs_to :admin_user
 
   # uploader
   mount_uploader :image, BlogImageUploader

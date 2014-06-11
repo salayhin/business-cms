@@ -18,7 +18,7 @@
 
       <!-- the actual blog post: title/author/date/content -->
       <hr>
-      <p><i class="fa fa-clock-o"></i> Posted on <%= @blog.created_at.strftime("%B %d, %Y") %> by <a href="#">Start Boostrap</a>
+      <p><i class="fa fa-clock-o"></i> Posted on <%= @blog.created_at.strftime("%B %d, %Y") %> by <a href="#"><%= @blog.admin_user.full_name %></a>
       </p>
       <hr>
       <% if @blog.image.present? %>
@@ -73,30 +73,13 @@
       <div class="well">
         <h4>Popular Blog Categories</h4>
         <div class="row">
+          <% @categories.each do |category| %>
           <div class="col-lg-6">
             <ul class="list-unstyled">
-              <li><a href="#dinosaurs">Dinosaurs</a>
-              </li>
-              <li><a href="#spaceships">Spaceships</a>
-              </li>
-              <li><a href="#fried-foods">Fried Foods</a>
-              </li>
-              <li><a href="#wild-animals">Wild Animals</a>
-              </li>
+              <li><a href="#dinosaurs"><%= category.name %></a></li>
             </ul>
           </div>
-          <div class="col-lg-6">
-            <ul class="list-unstyled">
-              <li><a href="#alien-abductions">Alien Abductions</a>
-              </li>
-              <li><a href="#business-casual">Business Casual</a>
-              </li>
-              <li><a href="#robots">Robots</a>
-              </li>
-              <li><a href="#fireworks">Fireworks</a>
-              </li>
-            </ul>
-          </div>
+          <% end %>
         </div>
       </div>
 

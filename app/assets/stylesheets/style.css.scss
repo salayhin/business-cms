@@ -25,13 +25,23 @@
   color: #fff;
 }
 
-a {
+.breadcrumb a {
   color: #fff;
   text-decoration: none;
 }
 
-a:hover, a:focus {
+.breadcrumb a:hover, a:focus {
   color: #fff;
+  text-decoration: underline;
+}
+
+a {
+  color: #1bbc9b;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #1bbc9b;
   text-decoration: underline;
 }
 
