@@ -24,7 +24,7 @@
 /*.tmproj
 
 /vendo/cache/*
-Gemfile.lock
+#Gemfile.lock
 
 public/uploads
 public/uploads/**/*
