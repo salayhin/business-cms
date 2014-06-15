@@ -38,4 +38,4 @@ public/assets/**/*
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/schema.rb
-/config/database.yml
+#/config/database.yml
